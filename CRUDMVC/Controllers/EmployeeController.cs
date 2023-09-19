@@ -11,8 +11,6 @@ namespace CRUDMVC.Controllers
 {
     public class EmployeeController : Controller
     {
-
-
         public ActionResult Index()
         {
             return View();
@@ -84,6 +82,24 @@ namespace CRUDMVC.Controllers
             var response = this.Json(js, JsonRequestBehavior.AllowGet);
 
             return response;
+        }
+
+        [HttpGet]
+        public JsonResult GetEmployeeById(string id)
+        {
+
+            DAL dal = new DAL();
+
+            var js = new
+            {
+                data = dal.GetEmployee(int.Parse(id)),
+                message = "",
+                success = true
+            };
+
+            var result = this.Json(js, JsonRequestBehavior.AllowGet);
+
+            return result;
         }
 
         public ActionResult AddEmployee()

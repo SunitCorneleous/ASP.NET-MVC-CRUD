@@ -115,5 +115,32 @@ namespace CRUDMVC.DataAccessLayer
                 return false;
             }
         }
+
+        // Get Employee By Id
+        public EmployeeModel GetEmployee(int id)
+        {
+            EmployeeModel employee = new EmployeeModel();
+            con.Open();
+
+            SqlCommand cmd = new SqlCommand("SELECT * FROM Employee WHERE EmployeeId = @Id;", con);
+
+            cmd.Parameters.AddWithValue("@ID", id);
+
+            SqlDataReader rdr = cmd.ExecuteReader();
+
+            while(rdr.Read())
+            {
+                employee.EmployeeId = Convert.ToInt32((rdr["EmployeeId"]).ToString());
+                employee.Name = rdr["Name"].ToString();
+                employee.Email = rdr["Email"].ToString();
+                employee.Address = rdr["Address"].ToString();
+                employee.Position = rdr["Position"].ToString();
+            }
+
+            rdr.Close();
+            con.Close();
+
+            return employee;
+        }
     }
 }
