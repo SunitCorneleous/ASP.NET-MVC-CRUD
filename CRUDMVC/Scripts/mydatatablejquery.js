@@ -83,7 +83,9 @@
             $.post(`https://localhost:44395/Employee/DeleteEmployee?id=${employeeId}`,
                 {},
                 function (data, status) {
-                    console.log(data)
+                    console.log(data);
+
+                    location.reload(true);
                 });
         });
 
@@ -114,7 +116,9 @@
                             data: employee
                         },
                         function (data, status) {
-                            console.log(data)
+                            console.log(data);
+
+                            location.reload(true);
                         });
                 }
 

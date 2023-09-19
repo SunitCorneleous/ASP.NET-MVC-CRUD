@@ -38,7 +38,9 @@
                         emodel: employee
                     },
                     function (data, status) {
-                        console.log(data)
+                        console.log(data);
+
+                        location.reload(true);
                     });
             }
         }
