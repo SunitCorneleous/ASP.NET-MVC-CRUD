@@ -5,12 +5,15 @@ using System.Web;
 using System.Web.Mvc;
 using CRUDMVC.DataAccessLayer;
 using CRUDMVC.Models;
+using Newtonsoft.Json;
 
 
 namespace CRUDMVC.Controllers
 {
     public class EmployeeController : Controller
     {
+        CRUDMVC.WebServiceReference.WebService1SoapClient webRef;
+
         public ActionResult Index()
         {
             return View();
@@ -19,11 +22,15 @@ namespace CRUDMVC.Controllers
         [HttpGet]
         public JsonResult GetEmployeeData()
         {
-            DAL dal = new DAL();
+            webRef = new CRUDMVC.WebServiceReference.WebService1SoapClient();
+
+            string data = webRef.AppGetAllEmployeeData();
+
+            List<EmployeeModel> modelList = JsonConvert.DeserializeObject<List<EmployeeModel>>(data);
 
             var js = new
             {
-                data = dal.GetAllEmployee(),
+                data = modelList,
                 message = "",
                 success = true
             };
@@ -36,13 +43,13 @@ namespace CRUDMVC.Controllers
         [HttpPost]
         public JsonResult CreateEmployee(EmployeeModel emodel)
         {
-            DAL dal = new DAL();
+            webRef = new CRUDMVC.WebServiceReference.WebService1SoapClient();
 
             var js = new
             {
                 data = "",
                 message = "",
-                success = dal.AddNewEmployee(emodel)
+                success = webRef.AppCreateNewEmployee(JsonConvert.SerializeObject(emodel))
             };
 
             var response = this.Json(js, JsonRequestBehavior.AllowGet);
@@ -53,13 +60,13 @@ namespace CRUDMVC.Controllers
         [HttpPost]
         public JsonResult DeleteEmployee(string id)
         {
-            DAL dal = new DAL();
+            webRef = new CRUDMVC.WebServiceReference.WebService1SoapClient();
 
             var js = new
             {
                 data = "",
                 message = "",
-                success = dal.DeleteEmployee(int.Parse(id))
+                success = webRef.AppDeleteEmployee(JsonConvert.SerializeObject(int.Parse(id)))
             };
 
             var response = this.Json(js, JsonRequestBehavior.AllowGet);

@@ -5,6 +5,10 @@ VisualStudioVersion = 16.0.33927.289
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CRUDMVC", "CRUDMVC\CRUDMVC.csproj", "{CF5B6B65-FF67-4091-B0D2-D663B17D1C73}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebService", "WebService\WebService.csproj", "{F37707B3-0FD2-4DD7-A90E-50E8CE3A1E59}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApplicationDataAccess", "ApplicationDataAccess\ApplicationDataAccess.csproj", "{191A2C15-99AA-483A-AC1C-BD6981E03582}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{CF5B6B65-FF67-4091-B0D2-D663B17D1C73}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CF5B6B65-FF67-4091-B0D2-D663B17D1C73}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CF5B6B65-FF67-4091-B0D2-D663B17D1C73}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F37707B3-0FD2-4DD7-A90E-50E8CE3A1E59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F37707B3-0FD2-4DD7-A90E-50E8CE3A1E59}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F37707B3-0FD2-4DD7-A90E-50E8CE3A1E59}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F37707B3-0FD2-4DD7-A90E-50E8CE3A1E59}.Release|Any CPU.Build.0 = Release|Any CPU
+		{191A2C15-99AA-483A-AC1C-BD6981E03582}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{191A2C15-99AA-483A-AC1C-BD6981E03582}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{191A2C15-99AA-483A-AC1C-BD6981E03582}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{191A2C15-99AA-483A-AC1C-BD6981E03582}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
