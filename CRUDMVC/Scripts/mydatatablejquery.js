@@ -57,7 +57,7 @@
                 "type": "GET",
                 "datatype": "json",
                 "success": function (data) {
-                    employeeData = data.data;
+                    employeeData = JSON.parse(data.data);
 
                     $("#ename").val(employeeData.Name);
                     $("#eemail").val(employeeData.Email);

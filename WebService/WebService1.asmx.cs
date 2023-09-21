@@ -48,5 +48,25 @@ namespace WebService
 
             return JsonConvert.SerializeObject(objEApplication.DeleteEmployee(id));
         }
+        [WebMethod]
+        public string AppUpdateEmployee(string idData, string employeeData)
+        {
+            int id = JsonConvert.DeserializeObject<int>(idData);
+            EmployeeModel employee = JsonConvert.DeserializeObject<EmployeeModel>(employeeData);
+
+            objEApplication = new EApplicationDAL();
+
+            return JsonConvert.SerializeObject(objEApplication.UpdateEmployee(id, employee));
+        }
+
+        [WebMethod]
+        public string AppGetEmployee(string data)
+        {
+            int id = JsonConvert.DeserializeObject<int>(data);
+
+            objEApplication = new EApplicationDAL();
+
+            return JsonConvert.SerializeObject(objEApplication.GetEmployee(id));
+        }
     }
 }

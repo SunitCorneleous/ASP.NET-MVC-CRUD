@@ -77,13 +77,13 @@ namespace CRUDMVC.Controllers
         [HttpPost]
         public JsonResult UpdateEmployee(string id, EmployeeModel data)
         {
-            DAL dal = new DAL();
+            webRef = new CRUDMVC.WebServiceReference.WebService1SoapClient();
 
             var js = new
             {
                 data = "",
                 message = "",
-                success = dal.UpdateEmployee(int.Parse(id), data)
+                success = webRef.AppUpdateEmployee(JsonConvert.SerializeObject(int.Parse(id)), JsonConvert.SerializeObject(data))
             };
 
             var response = this.Json(js, JsonRequestBehavior.AllowGet);
@@ -94,12 +94,11 @@ namespace CRUDMVC.Controllers
         [HttpGet]
         public JsonResult GetEmployeeById(string id)
         {
-
-            DAL dal = new DAL();
+            webRef = new CRUDMVC.WebServiceReference.WebService1SoapClient();
 
             var js = new
             {
-                data = dal.GetEmployee(int.Parse(id)),
+                data = webRef.AppGetEmployee(JsonConvert.SerializeObject(int.Parse(id))),
                 message = "",
                 success = true
             };
@@ -107,11 +106,6 @@ namespace CRUDMVC.Controllers
             var result = this.Json(js, JsonRequestBehavior.AllowGet);
 
             return result;
-        }
-
-        public ActionResult AddEmployee()
-        {
-            return View();
         }
     }
 }

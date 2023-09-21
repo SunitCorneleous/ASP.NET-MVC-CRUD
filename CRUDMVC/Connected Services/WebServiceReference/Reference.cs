@@ -35,6 +35,20 @@ namespace CRUDMVC.WebServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/AppDeleteEmployee", ReplyAction="*")]
         System.Threading.Tasks.Task<CRUDMVC.WebServiceReference.AppDeleteEmployeeResponse> AppDeleteEmployeeAsync(CRUDMVC.WebServiceReference.AppDeleteEmployeeRequest request);
+        
+        // CODEGEN: Generating message contract since element name idData from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/AppUpdateEmployee", ReplyAction="*")]
+        CRUDMVC.WebServiceReference.AppUpdateEmployeeResponse AppUpdateEmployee(CRUDMVC.WebServiceReference.AppUpdateEmployeeRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/AppUpdateEmployee", ReplyAction="*")]
+        System.Threading.Tasks.Task<CRUDMVC.WebServiceReference.AppUpdateEmployeeResponse> AppUpdateEmployeeAsync(CRUDMVC.WebServiceReference.AppUpdateEmployeeRequest request);
+        
+        // CODEGEN: Generating message contract since element name data from namespace http://tempuri.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/AppGetEmployee", ReplyAction="*")]
+        CRUDMVC.WebServiceReference.AppGetEmployeeResponse AppGetEmployee(CRUDMVC.WebServiceReference.AppGetEmployeeRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/AppGetEmployee", ReplyAction="*")]
+        System.Threading.Tasks.Task<CRUDMVC.WebServiceReference.AppGetEmployeeResponse> AppGetEmployeeAsync(CRUDMVC.WebServiceReference.AppGetEmployeeRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -234,6 +248,146 @@ namespace CRUDMVC.WebServiceReference {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class AppUpdateEmployeeRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="AppUpdateEmployee", Namespace="http://tempuri.org/", Order=0)]
+        public CRUDMVC.WebServiceReference.AppUpdateEmployeeRequestBody Body;
+        
+        public AppUpdateEmployeeRequest() {
+        }
+        
+        public AppUpdateEmployeeRequest(CRUDMVC.WebServiceReference.AppUpdateEmployeeRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class AppUpdateEmployeeRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string idData;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string employeeData;
+        
+        public AppUpdateEmployeeRequestBody() {
+        }
+        
+        public AppUpdateEmployeeRequestBody(string idData, string employeeData) {
+            this.idData = idData;
+            this.employeeData = employeeData;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class AppUpdateEmployeeResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="AppUpdateEmployeeResponse", Namespace="http://tempuri.org/", Order=0)]
+        public CRUDMVC.WebServiceReference.AppUpdateEmployeeResponseBody Body;
+        
+        public AppUpdateEmployeeResponse() {
+        }
+        
+        public AppUpdateEmployeeResponse(CRUDMVC.WebServiceReference.AppUpdateEmployeeResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class AppUpdateEmployeeResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string AppUpdateEmployeeResult;
+        
+        public AppUpdateEmployeeResponseBody() {
+        }
+        
+        public AppUpdateEmployeeResponseBody(string AppUpdateEmployeeResult) {
+            this.AppUpdateEmployeeResult = AppUpdateEmployeeResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class AppGetEmployeeRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="AppGetEmployee", Namespace="http://tempuri.org/", Order=0)]
+        public CRUDMVC.WebServiceReference.AppGetEmployeeRequestBody Body;
+        
+        public AppGetEmployeeRequest() {
+        }
+        
+        public AppGetEmployeeRequest(CRUDMVC.WebServiceReference.AppGetEmployeeRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class AppGetEmployeeRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string data;
+        
+        public AppGetEmployeeRequestBody() {
+        }
+        
+        public AppGetEmployeeRequestBody(string data) {
+            this.data = data;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class AppGetEmployeeResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="AppGetEmployeeResponse", Namespace="http://tempuri.org/", Order=0)]
+        public CRUDMVC.WebServiceReference.AppGetEmployeeResponseBody Body;
+        
+        public AppGetEmployeeResponse() {
+        }
+        
+        public AppGetEmployeeResponse(CRUDMVC.WebServiceReference.AppGetEmployeeResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    public partial class AppGetEmployeeResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string AppGetEmployeeResult;
+        
+        public AppGetEmployeeResponseBody() {
+        }
+        
+        public AppGetEmployeeResponseBody(string AppGetEmployeeResult) {
+            this.AppGetEmployeeResult = AppGetEmployeeResult;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface WebService1SoapChannel : CRUDMVC.WebServiceReference.WebService1Soap, System.ServiceModel.IClientChannel {
     }
@@ -332,6 +486,58 @@ namespace CRUDMVC.WebServiceReference {
             inValue.Body = new CRUDMVC.WebServiceReference.AppDeleteEmployeeRequestBody();
             inValue.Body.data = data;
             return ((CRUDMVC.WebServiceReference.WebService1Soap)(this)).AppDeleteEmployeeAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CRUDMVC.WebServiceReference.AppUpdateEmployeeResponse CRUDMVC.WebServiceReference.WebService1Soap.AppUpdateEmployee(CRUDMVC.WebServiceReference.AppUpdateEmployeeRequest request) {
+            return base.Channel.AppUpdateEmployee(request);
+        }
+        
+        public string AppUpdateEmployee(string idData, string employeeData) {
+            CRUDMVC.WebServiceReference.AppUpdateEmployeeRequest inValue = new CRUDMVC.WebServiceReference.AppUpdateEmployeeRequest();
+            inValue.Body = new CRUDMVC.WebServiceReference.AppUpdateEmployeeRequestBody();
+            inValue.Body.idData = idData;
+            inValue.Body.employeeData = employeeData;
+            CRUDMVC.WebServiceReference.AppUpdateEmployeeResponse retVal = ((CRUDMVC.WebServiceReference.WebService1Soap)(this)).AppUpdateEmployee(inValue);
+            return retVal.Body.AppUpdateEmployeeResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<CRUDMVC.WebServiceReference.AppUpdateEmployeeResponse> CRUDMVC.WebServiceReference.WebService1Soap.AppUpdateEmployeeAsync(CRUDMVC.WebServiceReference.AppUpdateEmployeeRequest request) {
+            return base.Channel.AppUpdateEmployeeAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<CRUDMVC.WebServiceReference.AppUpdateEmployeeResponse> AppUpdateEmployeeAsync(string idData, string employeeData) {
+            CRUDMVC.WebServiceReference.AppUpdateEmployeeRequest inValue = new CRUDMVC.WebServiceReference.AppUpdateEmployeeRequest();
+            inValue.Body = new CRUDMVC.WebServiceReference.AppUpdateEmployeeRequestBody();
+            inValue.Body.idData = idData;
+            inValue.Body.employeeData = employeeData;
+            return ((CRUDMVC.WebServiceReference.WebService1Soap)(this)).AppUpdateEmployeeAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CRUDMVC.WebServiceReference.AppGetEmployeeResponse CRUDMVC.WebServiceReference.WebService1Soap.AppGetEmployee(CRUDMVC.WebServiceReference.AppGetEmployeeRequest request) {
+            return base.Channel.AppGetEmployee(request);
+        }
+        
+        public string AppGetEmployee(string data) {
+            CRUDMVC.WebServiceReference.AppGetEmployeeRequest inValue = new CRUDMVC.WebServiceReference.AppGetEmployeeRequest();
+            inValue.Body = new CRUDMVC.WebServiceReference.AppGetEmployeeRequestBody();
+            inValue.Body.data = data;
+            CRUDMVC.WebServiceReference.AppGetEmployeeResponse retVal = ((CRUDMVC.WebServiceReference.WebService1Soap)(this)).AppGetEmployee(inValue);
+            return retVal.Body.AppGetEmployeeResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<CRUDMVC.WebServiceReference.AppGetEmployeeResponse> CRUDMVC.WebServiceReference.WebService1Soap.AppGetEmployeeAsync(CRUDMVC.WebServiceReference.AppGetEmployeeRequest request) {
+            return base.Channel.AppGetEmployeeAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<CRUDMVC.WebServiceReference.AppGetEmployeeResponse> AppGetEmployeeAsync(string data) {
+            CRUDMVC.WebServiceReference.AppGetEmployeeRequest inValue = new CRUDMVC.WebServiceReference.AppGetEmployeeRequest();
+            inValue.Body = new CRUDMVC.WebServiceReference.AppGetEmployeeRequestBody();
+            inValue.Body.data = data;
+            return ((CRUDMVC.WebServiceReference.WebService1Soap)(this)).AppGetEmployeeAsync(inValue);
         }
     }
 }

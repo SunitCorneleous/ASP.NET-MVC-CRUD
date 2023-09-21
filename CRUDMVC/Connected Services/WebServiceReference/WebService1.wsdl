@@ -40,6 +40,35 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="AppUpdateEmployee">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="idData" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="employeeData" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AppUpdateEmployeeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AppUpdateEmployeeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AppGetEmployee">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="data" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AppGetEmployeeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AppGetEmployeeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="AppGetAllEmployeeDataSoapIn">
@@ -60,6 +89,18 @@
   <wsdl:message name="AppDeleteEmployeeSoapOut">
     <wsdl:part name="parameters" element="tns:AppDeleteEmployeeResponse" />
   </wsdl:message>
+  <wsdl:message name="AppUpdateEmployeeSoapIn">
+    <wsdl:part name="parameters" element="tns:AppUpdateEmployee" />
+  </wsdl:message>
+  <wsdl:message name="AppUpdateEmployeeSoapOut">
+    <wsdl:part name="parameters" element="tns:AppUpdateEmployeeResponse" />
+  </wsdl:message>
+  <wsdl:message name="AppGetEmployeeSoapIn">
+    <wsdl:part name="parameters" element="tns:AppGetEmployee" />
+  </wsdl:message>
+  <wsdl:message name="AppGetEmployeeSoapOut">
+    <wsdl:part name="parameters" element="tns:AppGetEmployeeResponse" />
+  </wsdl:message>
   <wsdl:portType name="WebService1Soap">
     <wsdl:operation name="AppGetAllEmployeeData">
       <wsdl:input message="tns:AppGetAllEmployeeDataSoapIn" />
@@ -72,6 +113,14 @@
     <wsdl:operation name="AppDeleteEmployee">
       <wsdl:input message="tns:AppDeleteEmployeeSoapIn" />
       <wsdl:output message="tns:AppDeleteEmployeeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AppUpdateEmployee">
+      <wsdl:input message="tns:AppUpdateEmployeeSoapIn" />
+      <wsdl:output message="tns:AppUpdateEmployeeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AppGetEmployee">
+      <wsdl:input message="tns:AppGetEmployeeSoapIn" />
+      <wsdl:output message="tns:AppGetEmployeeSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="WebService1Soap" type="tns:WebService1Soap">
@@ -103,6 +152,24 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="AppUpdateEmployee">
+      <soap:operation soapAction="http://tempuri.org/AppUpdateEmployee" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AppGetEmployee">
+      <soap:operation soapAction="http://tempuri.org/AppGetEmployee" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="WebService1Soap12" type="tns:WebService1Soap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -126,6 +193,24 @@
     </wsdl:operation>
     <wsdl:operation name="AppDeleteEmployee">
       <soap12:operation soapAction="http://tempuri.org/AppDeleteEmployee" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AppUpdateEmployee">
+      <soap12:operation soapAction="http://tempuri.org/AppUpdateEmployee" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AppGetEmployee">
+      <soap12:operation soapAction="http://tempuri.org/AppGetEmployee" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

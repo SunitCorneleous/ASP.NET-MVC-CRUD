@@ -146,6 +146,12 @@
     <Content Include="Connected Services\WebServiceReference\CRUDMVC.WebServiceReference.AppDeleteEmployeeResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Connected Services\WebServiceReference\CRUDMVC.WebServiceReference.AppGetEmployeeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\WebServiceReference\CRUDMVC.WebServiceReference.AppUpdateEmployeeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Connected Services\WebServiceReference\WebService1.disco" />
     <None Include="Connected Services\WebServiceReference\configuration91.svcinfo" />
     <None Include="Connected Services\WebServiceReference\configuration.svcinfo" />
@@ -192,7 +198,6 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Employee\Index.cshtml" />
-    <Content Include="Views\Employee\AddEmployee.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
