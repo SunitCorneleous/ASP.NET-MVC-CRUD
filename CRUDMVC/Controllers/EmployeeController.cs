@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using CRUDMVC.CustomFilters;
 using CRUDMVC.DataAccessLayer;
 using CRUDMVC.Models;
 using Newtonsoft.Json;
@@ -19,6 +20,7 @@ namespace CRUDMVC.Controllers
             return View();
         }
 
+        
         [HttpGet]
         public JsonResult GetEmployeeData()
         {
@@ -40,6 +42,7 @@ namespace CRUDMVC.Controllers
             return result;
         }
 
+        [MyActionFilter]
         [HttpPost]
         public JsonResult CreateEmployee(EmployeeModel emodel)
         {
@@ -57,6 +60,7 @@ namespace CRUDMVC.Controllers
             return response;
         }
 
+        [MyActionFilter]
         [HttpPost]
         public JsonResult DeleteEmployee(string id)
         {
@@ -74,6 +78,7 @@ namespace CRUDMVC.Controllers
             return response;
         }
 
+        [MyActionFilter]
         [HttpPost]
         public JsonResult UpdateEmployee(string id, EmployeeModel data)
         {
