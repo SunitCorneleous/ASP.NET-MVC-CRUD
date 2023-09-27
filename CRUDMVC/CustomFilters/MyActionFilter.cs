@@ -11,8 +11,10 @@ namespace CRUDMVC.CustomFilters
     {
         public override void OnActionExecuting(ActionExecutingContext context)
         {
-            //{System.Web.Mvc.ReflectedParameterDescriptor}
-            ParameterDescriptor[] parameters = context.ActionDescriptor.GetParameters(); 
+            ParameterDescriptor[] parameters = context.ActionDescriptor.GetParameters();
+
+            var _controller = context.Controller;
+            var _actionMethod = context.ActionDescriptor.ActionName;
         }
     }
 }
